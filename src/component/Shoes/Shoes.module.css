@@ -1,120 +1,217 @@
-.store{
-    padding-top: 120px;
-    background: #CACFDF;
-    display:flex;
-    flex-direction: column;
-}
-
-.store__container{
+.buy_shoes{
+    background:#D9D9D9;
+    height: 100vh;
     display: flex;
-    flex-direction: column;
-    align-self:center;
-    width: 1500px;
+    justify-content: center;
 }
 
-.store__label{
-    margin-top: 109px;
-    font-family: 'Rowdies';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 50px;
-    line-height: 133.4%;
-    letter-spacing: 0.01em;
-    color: #2A5D67;
+.buy_shoes__container{
+    margin-top: 150px;
+    max-width: 1500px;
+    width: 100%;
+
 }
 
-.available__items{
-    margin-top: 77px;
-    display: flex;
-    justify-content:space-between;
-    margin-bottom: 125px;
-    flex-wrap: wrap;
-    row-gap: 60px;
-}
-
-.available__item{
-    display: flex;
-    flex-direction: column;
+.buy_shoes__back{
     cursor: pointer;
-    padding: 43px 20px 0px 20px;
-    width: 350px;
-    height: 457px;
-    background: #2A5D67;
-    border-radius: 20px;
-    transition: all 0.3s ease-in-out;
-}
-
-.available__item:hover{
-    transform: translateY(-10px);
-}
-
-
-.store__categorys{
     display: flex;
-    align-self:center;
+    gap: 24px;
+    align-items:center;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 43px;
+    color: #000000;
+    transition: all 0.4s;
+}
+
+.buy_shoes__back:hover{
+    transform: translateX(-5px);
+}
+
+.buy_shoes__content{
+    display: flex;
     justify-content: space-between;
-    width:741px;
-}
-.store__category{
-    
-    width: 150px;
-    height: 90px;   
-    padding: 25px 0px;
-    text-align: center;
-    background: #FFFFFF;
-    border-radius: 20px;
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 30px;
-    line-height: 133.4%;
-    letter-spacing: 0.01em;
-    color: #2A5D67;
-    transition:all 0.3s;
 }
 
-.store__category__active{
-    width: 150px;
-    height: 90px;
-    padding: 25px 0px;
-    text-align: center;
-    border-radius: 20px;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 30px;
-    line-height: 133.4%;
-    letter-spacing: 0.01em;
-    transition:all 0.3s;
-    background: #2A5D67;
-    color: #FFFFFF;
-    
+.buy_shoes__info{
+    display: flex;
+    flex-direction: column;
 }
 
-.store__category:hover{
-    background: #3e91a1;
-    color: #FFFFFF;
-}
-
-.store__name{
-    margin-top: 120px;
-    text-align: center;
-    font-family: 'Montserrat';
+.buy_shoes__name{
+    max-width: 600px;
     font-style: normal;
     font-weight: 700;
+    font-size: 70px;
+    line-height: 85px;
+    color: #000000;
+
+}
+
+.buy_shoes__description{
+    max-width: 700px;
+    margin: 40px 0;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 37px;
+    color: #000000;
+}
+
+
+.buy_shoes__buy{
+    display: flex;
+    align-items:center;
+    gap: 47px;
+}
+
+
+
+.buy_shoes__btn{
+    padding: 20px 72px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 27px;
+
+    color: #D9D9D9;
+
+    background: #000000;
+    border-radius: 10px;
+    transition: all 0.4s;
+}
+
+
+.buy_shoes__btn:hover{
+    color: #000000;
+    background: #e2e2e2;
+
+
+}
+
+.buy_shoes__btn:hover~.buy_shoes__sale{
+    transform: scale(1.1);
+}
+
+.buy_shoes__sale{
+    font-style: normal;
+    font-weight: 600;
     font-size: 40px;
     line-height: 133.4%;
     letter-spacing: 0.01em;
-    color: #FFFFFF;
+    transition: all 0.4s;
+    color: #000000;
 }
 
-.store__btn{
-    margin-top: 10px;
-    text-align: center;
-    font-family: 'Montserrat';
+.buy_shoes__sizes{
+    max-width: 522px;
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
     font-style: normal;
-    font-weight: 600;
-    font-size: 30px;
-    line-height: 133.4%;
-    letter-spacing: 0.01em;
-    color: #FFFFFF;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 38px;
+    color: #000000;
+
+}
+
+
+.buy_shoes__size{
+    transition: all 0.4s;
+    cursor: pointer;
+    position: relative;
+}
+
+.buy_shoes__size::before{
+
+    content: "";
+    position: absolute;
+    background:#50c3d7;
+    height: 3px;
+    top: 30px;
+    transition: all 0.4s;
+}
+
+.size__active::before{
+    width: 100%;
+}
+
+.size__active{
+    color:#1e5594;
+}
+
+
+.buy_shoes__size:hover::before{
+    width: 100%;
+
+}
+
+.buy_shoes__size:hover{
+    color:#1e5594;
+}
+
+.buy_shoes__colors{
+    max-width: 405px;
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+
+.buy_shoes__color{
+    cursor: pointer;
+    width: 100px;
+    height: 94px;
+    border-radius: 10px;
+
+}
+
+.buy_shoes__color:hover{
+    border:3px solid black;
+}
+
+.color_active{
+    border:3px solid black;
+}
+
+.buy_shoes__shoes{
+    height: 40vh;
+
+    animation: rotate_boots 5s forwards infinite ;
+}
+
+
+@keyframes rotate_boots{
+
+    0%{
+
+        transform: translate(0px,0px) rotateZ(-15deg);
+
+    }
+
+    20%{
+        transform: translate(160px,190px) rotateZ(-15deg);
+    }
+
+    40%{
+        transform: translate(-80px,-50px) rotateZ(-15deg);
+    }
+
+    60%{
+        transform: translate(160px,-50px) rotateZ(-15deg);
+    }
+
+    80%{
+        transform: translate(-80px,190px) rotateZ(-15deg);
+    }
+
+
+    100%{
+        transform: translate(0,0) rotateZ(-15deg);
+    }
 }

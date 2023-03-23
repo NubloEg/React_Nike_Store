@@ -1,23 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from "./component/Header/Header";
+import {Main, Cart, BuyShoes} from "./page/"
+import {Route, Routes} from "react-router";
+import {useSelector} from "react-redux";
+
 
 function App() {
+    const state=useSelector(state=>state)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <Header cart={state.cart}/>
+        <Routes className='content'>
+            <Route path={'/'} element={<Main/>}/>
+            <Route path={'/Cart'} element={<Cart items={state.cart.allItem} allCount={state.cart.countCart} allMoney={state.cart.allBuy}/>}/>
+            <Route path={'/BuyShoes/*'} element={<BuyShoes shoes_red={state.buy_shoes}/>}/>
+        </Routes>
     </div>
   );
 }

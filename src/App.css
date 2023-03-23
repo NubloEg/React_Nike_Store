@@ -1,38 +1,92 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rowdies:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+*, *:before, *:after{
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+:focus, :active{outline: none;}
+a:focus, a:active{outline: none;}
+
+nav,footer,header,aside{display: block;}
+
+html, body{
+    height: 100%;
+    width: 100%;
+    line-height: 1;
+    font-style: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    font-family: Montserrat;
+    background: #E2E7F7;
+    position: relative;
+    scroll-behavior: smooth;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+input, button, textarea{font-family: Montserrat;}
+
+input::-ms-clear{display:none;}
+button{cursor: pointer;}
+button::-moz-focus-inner{padding: 0;border: 0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style-type: none;}
+img{vertical-align: top;}
+
+h1,h2, h3, h4, h5, h6{font-style: Montserrat; font-weight: 400;}
+
+/* Работает в Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #ffffff #393130;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Работает в Chrome, Edge и Safari */
+*::-webkit-scrollbar {
+    width: 12px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+*::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.4);
 }
 
-.App-link {
-  color: #61dafb;
+*::-webkit-scrollbar-thumb {
+    background-color: #54BACF;
+    border-radius: 20px;
+    border: 3px solid rgba(84, 186, 207, 0.4);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.footer__end{
+    height: 100%;
+    padding:28px 0px;
+    width: 100%;
+    text-align: center;
+
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 133.4%;
+    letter-spacing: 0.01em;
+    color: #FFFFFF;
+    background: #2A5D67;
+}
+
+.red{
+    background: red;
+}
+
+.blue{
+    background: #1570C8;;
+}
+
+.green{
+    background: green;
 }
