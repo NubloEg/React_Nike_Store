@@ -1,0 +1,120 @@
+.store{
+    padding-top: 120px;
+    background: #CACFDF;
+    display:flex;
+    flex-direction: column;
+}
+
+.store__container{
+    display: flex;
+    flex-direction: column;
+    align-self:center;
+    width: 1500px;
+}
+
+.store__label{
+    margin-top: 109px;
+    font-family: 'Rowdies';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 133.4%;
+    letter-spacing: 0.01em;
+    color: #2A5D67;
+}
+
+.available__items{
+    margin-top: 77px;
+    display: flex;
+    justify-content:space-between;
+    margin-bottom: 125px;
+    flex-wrap: wrap;
+    row-gap: 60px;
+}
+
+.available__item{
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 43px 20px 0px 20px;
+    width: 350px;
+    height: 457px;
+    background: #2A5D67;
+    border-radius: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.available__item:hover{
+    transform: translateY(-10px);
+}
+
+
+.store__categorys{
+    display: flex;
+    align-self:center;
+    justify-content: space-between;
+    width:741px;
+}
+.store__category{
+    
+    width: 150px;
+    height: 90px;   
+    padding: 25px 0px;
+    text-align: center;
+    background: #FFFFFF;
+    border-radius: 20px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 133.4%;
+    letter-spacing: 0.01em;
+    color: #2A5D67;
+    transition:all 0.3s;
+}
+
+.store__category__active{
+    width: 150px;
+    height: 90px;
+    padding: 25px 0px;
+    text-align: center;
+    border-radius: 20px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 133.4%;
+    letter-spacing: 0.01em;
+    transition:all 0.3s;
+    background: #2A5D67;
+    color: #FFFFFF;
+    
+}
+
+.store__category:hover{
+    background: #3e91a1;
+    color: #FFFFFF;
+}
+
+.store__name{
+    margin-top: 120px;
+    text-align: center;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 133.4%;
+    letter-spacing: 0.01em;
+    color: #FFFFFF;
+}
+
+.store__btn{
+    margin-top: 10px;
+    text-align: center;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 133.4%;
+    letter-spacing: 0.01em;
+    color: #FFFFFF;
+}
