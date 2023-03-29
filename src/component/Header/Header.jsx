@@ -23,7 +23,7 @@ const Header = ({cart}) => {
                 <a  className={'popup__btn'} onClick={()=>{
                     setHiddenPop(false)}}>MENU</a>
                 <div className={hiddenPop?'popup disable':'popup'}>
-                    <a  onClick={()=>setHiddenPop(true)} className={'popup__close'}>close</a>
+                    <a  onClick={()=>setHiddenPop(true)} className={'popup__close'}>CLOSE</a>
                     <div className={'popup__items'}>
                         <a href="/#" className={'popup__item'}>Home</a>
                         <a href="/#info" className={'popup__item'}>Information</a>

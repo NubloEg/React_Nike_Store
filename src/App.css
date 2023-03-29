@@ -102,9 +102,10 @@ h1,h2, h3, h4, h5, h6{font-style: Montserrat; font-weight: 400;}
 
 .popup__close{
     position: absolute;
-    right: 100px;
+    right: 10%;
     top: 50px;
     color: white;
+    cursor: pointer;
 }
 
 
@@ -137,5 +138,6 @@ h1,h2, h3, h4, h5, h6{font-style: Montserrat; font-weight: 400;}
         display: block;
         color: white;
         font-size: 40px;
+        cursor: pointer;
     }
 }
