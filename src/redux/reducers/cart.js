@@ -6,22 +6,44 @@ const initialState={
 
 
 const cart=(state=initialState,action)=>{
-    let elem;
-
+    let elem=0;
+    let newItem=[]
     const findItem=()=> {
-        if(state.allItem.length!==0){
+
+        if(state.allItem.length===0){
+           return elem
+        }else{
+
             state.allItem.forEach(el=>{
-                if (el.name===action.payload.name){
-                    console.log(el)
-                    return el
+                    if (el.name===action.payload.name){
+                        elem=el;
+
+                    }
                 }
 
-            })
-        }else{
-            return 0
+            )
         }
 
     }
+
+    function plusItem(bool){
+        newItem=state.allItem;
+        newItem.map(el=>{
+            if (el.name===elem.name){
+               if (bool){
+                   el.money+=elem.price
+                   el.count+=1
+               }else{
+                   el.money-=elem.price
+                   el.count-=1
+
+
+               }
+            }
+        })
+    }
+
+
 
     switch (action.type) {
 
@@ -39,28 +61,27 @@ const cart=(state=initialState,action)=>{
                     }]
             }
         case"PLUS_ITEM":
-            elem=findItem()
+            findItem()
+            plusItem(true)
+
+
             return {
                 ...state,
                 countCart: state.countCart+1,
-                allBuy:state.allBuy+ action.payload.buy,
-                allItem: [...state.allItem,
-                    {
-                        ...action.payload.shoes,
-                        count:elem.count+1
-                    }]
+                allBuy:state.allBuy+ elem.price,
+                allItem: newItem
             }
         case"MINUS_ITEM":
-            elem=findItem()
+
+            findItem()
+            plusItem(false)
+
+
             return {
                 ...state,
                 countCart: state.countCart-1,
-                allBuy:state.allBuy+ action.payload.buy,
-                allItem: [...state.allItem,
-                    {
-                        ...action.payload.shoes,
-                        count:elem.count+1
-                    }]
+                allBuy:state.allBuy- elem.price,
+                allItem: newItem
             }
         case"CLEAR_ITEM":
             return {

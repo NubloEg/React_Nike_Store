@@ -16,9 +16,26 @@ const Store = ({category}) => {
         })
     }
 
+    const createBoots=()=>{
+        
+    if (boots_red.category==="All") {
+        return boots_red.boots.map((el,ind)=><Link onClick={()=>changeShoes(el)} key={ind} to={`/BuyShoes/${ind+1}`} className={style.available__item}>
+        <img  src={require(`../../img/available/boots/${el.img}.png`)} alt="boots"/>
+        <div className={style.store__name}>{el.name}</div>
+        <div className={style.store__btn}>${el.money}</div>
+    </Link>)
+        }else{
+                    
+                    const result=boots_red.boots.filter(el=>el.category===boots_red.category)
+                    return result.map((el,ind)=><Link onClick={()=>changeShoes(el)} key={ind} to={`/BuyShoes/${ind+1}`} className={style.available__item}>
+                    <img  src={require(`../../img/available/boots/${el.img}.png`)} alt="boots"/>
+                    <div className={style.store__name}>{el.name}</div>
+                    <div className={style.store__btn}>${el.money}</div>
+                </Link>)
+                }  
 
-
-
+       
+    }
 
     const onCategoryActive=(name)=>{
 
@@ -41,18 +58,7 @@ const Store = ({category}) => {
 
         <div className={style.available__items}>
             {
-                boots_red.category==="All"?boots_red.boots.map((el,ind)=><Link onClick={()=>changeShoes(el)} key={ind} to={`/BuyShoes/${ind+1}`} className={style.available__item}>
-                    <img  src={require(`../../img/available/boots/${el.img}.png`)} alt="boots"/>
-                    <div className={style.store__name}>{el.name}</div>
-                    <div className={style.store__btn}>${el.money}</div>
-                </Link>):
-                    boots_red.boots.map((el,ind)=>{if (el.category===boots_red.category){
-                      return <Link onClick={()=>changeShoes(el)} key={ind} to={`/BuyShoes/${ind+1}`} className={style.available__item}>
-                            <img  src={require(`../../img/available/boots/${el.img}.png`)} alt="boots"/>
-                            <div className={style.store__name}>{el.name}</div>
-                            <div className={style.store__btn}>${el.money}</div>
-                        </Link>
-                    }})
+               createBoots()
             }
 
            

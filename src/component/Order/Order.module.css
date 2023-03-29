@@ -9,23 +9,13 @@
 }
 
 .order__container{
-    margin-top: 164px;
-    width: 1500px;
+    margin-top: 9%;
+    max-width: 1500px;
+    width:100%;
     display: flex;
     flex-direction: column;
     padding: 0 15px;
     
-}
-
-.order__midle{
-    margin-top: 64px;
-    display: flex;
-    justify-content:space-between;
-    position: relative;
-}
-
-.order__buy{
-    width: 453px;
 }
 
 .order__title{  
@@ -36,6 +26,20 @@
     color: #54BACF;
 }
 
+.order__midle{
+    margin-top: 4%;
+    display: flex;
+    justify-content:space-between;
+    position: relative;
+}
+
+.order__buy{
+    max-width: 453px;
+    width:100%;
+}
+
+
+
 .order__h1{
     font-family: 'Rowdies';
     font-style: normal;
@@ -44,8 +48,10 @@
     line-height: 133.4%;
     color: #FFFFFF;
     max-width: 334px;
-    margin-bottom: 60px;
+    width:100%;
+    margin-bottom: 13%;
 }
+
 .order__btn{
     font-style: normal;
     font-weight: 800;
@@ -64,24 +70,29 @@
     
     background: #50c3d7;
 }
-
+.order__shoes{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
 
 .order__shoes__title{
     font-family: 'Montserrat';
-font-style: normal;
-font-weight: 800;
-font-size: 350px;
-line-height: 132.4%;
-/* or 463px */
+    font-style: normal;
+    font-weight: 800;
+    font-size: 22em;
+    line-height: 132.4%;
+    /* or 463px */
+    letter-spacing: 0.025em;
+    color: rgba(84, 186, 207, 0.4);
 
-letter-spacing: 0.025em;
-
-color: rgba(84, 186, 207, 0.4);
 }
 
 .order__shoes__img{
+    max-width: 1100px; 
+    width: 100%;
     position: absolute;
-    top: -252px;
+    top: -40%;
     right: 66px;
     transform: rotate(3deg);
     animation-name:shoes-rotate;
@@ -103,16 +114,20 @@ color: rgba(84, 186, 207, 0.4);
 
 .order__items{
     position: absolute;
-    bottom: -147px;
-    width:1104px;
+    bottom: -13%;
+    max-width:1104px;
+    width: 100%;
     display: flex;
-    justify-content:space-between
+    justify-content:center;
+    gap: 30px;
 }
 
 .order__item{
     cursor: pointer;
-    width: 350px;
-    height: 294px;
+    max-width: 350px;
+    width: 100%;
+    max-height: 294px;
+    height: 100vh;
     background: #54BACF;
     box-shadow: 17px 20px 19px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
@@ -130,7 +145,7 @@ color: rgba(84, 186, 207, 0.4);
     font-family: 'Rowdies';
     font-style: normal;
     font-weight: 700;
-    font-size: 60px;
+    font-size: 4em;
     line-height: 132.4%;
     letter-spacing: 0.025em;
     
@@ -143,7 +158,7 @@ color: rgba(84, 186, 207, 0.4);
     bottom:-12px;
     left: 50px;
     border: 4px solid #FFFFFF;
-    width: 86px;
+    width: 50%;
 }
 
 .item__description{
@@ -152,9 +167,229 @@ color: rgba(84, 186, 207, 0.4);
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
-    font-size: 25px;
+    font-size: 1.6em;
     line-height: 132.4%;
     text-align: center;
     letter-spacing: 0.025em;
     color: #FFFFFF;
+}
+
+@media(max-width:1300px){
+
+
+    .order__h1{
+        max-width:100%;
+       
+    }
+    .order__buy{}
+
+    .order__shoes__img{
+        max-width:800px;
+        top: -30%;
+        
+    }
+    .order__shoes__title{
+     
+        font-size: 18em;
+       
+        
+    }
+
+    .order__items{
+        bottom: -5%;
+    }
+
+   .order__item{
+    max-width: 250px;
+   }
+
+   .item__title{
+   
+    font-size: 3.5em;
+  
+}
+
+
+.item__description{
+   
+  
+    font-size: 1.2em;
+   
+}
+   
+}
+
+@media(max-width:1100px){
+
+    .order__container{
+        margin-top: 15%;
+
+
+    }
+
+    .order__h1{
+        max-width:100%;
+       
+    }
+
+    .order__shoes__img{
+        max-width:600px;
+        top: -10%;
+        
+    }
+    .order__shoes__title{
+     
+        font-size: 14em;
+      
+        
+    }
+
+    .order__items{
+        bottom: -5%;
+    }
+
+   .order__item{
+    max-width: 250px;
+   }
+
+   .item__title{
+   
+    font-size: 3.5em;
+  
+}
+
+
+    .item__description{
+
+
+        font-size: 1.2em;
+
+    }
+   
+}
+
+@media(max-width:930px){
+
+    .order{
+        height: 900px;
+    }
+    .order__shoes__img{
+        max-width:600px;
+        top: -30%;
+    }
+    .order__shoes__title{
+        font-size: 14em;
+    }
+
+    .order__h1{
+        font-size: 50px;
+    }
+
+    .order__btn{
+        padding:15px 10px;
+    }
+}
+
+@media(max-width:824px){
+
+    .order__container{
+        margin-top: 25%;
+       align-items: center;
+
+    }
+    .order__shoes__img{
+       display: none;
+    }
+    .order__shoes__title{
+        display: none;
+    }
+
+    .order__h1{
+        font-size: 50px;
+    }
+
+    #info{
+        display: flex;
+
+    }
+
+    .order__item{
+
+    }
+
+    .item__title{
+        font-size: 2em;
+        margin-top: 10px;
+    }
+    .item__title::after{
+        content:" ";
+        position: absolute;
+        bottom:-12px;
+        left: 25%;
+        border:2px solid #FFFFFF;
+        width: 50%;
+    }
+
+    .item__description{
+        font-size: 1em;
+        margin-top: 15px;
+    }
+
+
+}
+
+@media(max-width:625px){
+    .order__items{
+        bottom: -2%;
+        display: flex;
+        justify-content:center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .order__item{
+        cursor: pointer;
+        width:200px;
+        height: 180px;
+
+
+    }
+}
+
+@media(max-width:420px){
+    .order__items{
+        bottom: -2%;
+        display: flex;
+        justify-content:center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .order__item{
+        cursor: pointer;
+        width:150px;
+        height: 180px;
+
+
+    }
+
+    .item__title{
+        font-size: 1.5em;
+        margin-top: 10px;
+    }
+    .item__title::after{
+        content:" ";
+        position: absolute;
+        bottom:-8px;
+        left: 25%;
+        border:2px solid #FFFFFF;
+        width: 50%;
+    }
+
+    .item__description{
+        font-size: 1em;
+        margin-top: 15px;
+        padding: 5px;
+    }
+
 }

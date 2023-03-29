@@ -4,7 +4,7 @@ import Store from "../component/Store/Store"
 
 const Main =()=>{
     return(<>
-     <Order/>
+        <Order/>
         <Store category={['All','Man','Women','Child']} />
         <div className="footer__end">All copyright @ chidi 2023</div></>
        

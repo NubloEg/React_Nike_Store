@@ -23,7 +23,8 @@ const Shoes = ({sizes,colors,name,money,description,img}) => {
                 name:name,
                 money:money,
                 size:size,
-                color:color
+                color:color,
+                price:money
             }},
         })
     }
