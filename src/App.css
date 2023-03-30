@@ -18,7 +18,7 @@ a:focus, a:active{outline: none;}
 nav,footer,header,aside{display: block;}
 
 html, body{
-    height: 100%;
+    height: 100vh;
     width: 100%;
     line-height: 1;
     font-style: 14px;
@@ -66,7 +66,7 @@ h1,h2, h3, h4, h5, h6{font-style: Montserrat; font-weight: 400;}
 
 .footer__end{
     height: 100%;
-    padding:28px 0px;
+    padding:28px 0;
     width: 100%;
     text-align: center;
     font-style: normal;

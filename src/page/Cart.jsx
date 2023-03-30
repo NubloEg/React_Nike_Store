@@ -37,7 +37,7 @@ const Cart =({items,allCount,allMoney})=>{
                     </div>: <>
                      <div className={style.cart__items}>
 
-                            { items.map((el,i)=><CartItem dispatch={dispatch} key={i} name={el.name} size={el.size} money={el.money} count={el.count} color={el.color} />)
+                            { items.map((el,i)=><CartItem dispatch={dispatch} key={i} price={el.price} name={el.name} size={el.size} money={el.money} count={el.count} color={el.color} />)
 
                             }
                         </div>

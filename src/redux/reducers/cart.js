@@ -6,81 +6,77 @@ const initialState={
 
 
 const cart=(state=initialState,action)=>{
-    let elem=0;
     let newItem=[]
-    const findItem=()=> {
 
-        if(state.allItem.length===0){
-           return elem
-        }else{
+    function changeItem(bool){
 
-            state.allItem.forEach(el=>{
-                    if (el.name===action.payload.name){
-                        elem=el;
-
-                    }
-                }
-
-            )
-        }
-
-    }
-
-    function plusItem(bool){
         newItem=state.allItem;
+
         newItem.map(el=>{
-            if (el.name===elem.name){
-               if (bool){
-                   el.money+=elem.price
-                   el.count+=1
-               }else{
-                   el.money-=elem.price
-                   el.count-=1
+
+            if (el.name===action.payload.name){
 
 
-               }
+                if (bool){
+
+                    el.money+=action.payload.price
+
+                    el.count+=1
+                }else{
+
+                    if (el.count===1){
+                        removeItem()
+
+                    }else{
+                        el.money-=action.payload.price
+                        el.count-=1
+                    }
+
+
+                }
             }
-        })
+
+            })
+
+       
     }
 
+    const removeItem=()=>{
+        newItem=newItem.filter(el=>el.name!==action.payload.name)
+
+    }
+
+    const addItem=()=>{
+        newItem.push(action.payload)
+    }
 
 
     switch (action.type) {
-
         case"ADD_ITEM":
-
-            return {
-
-                ...state,
-                countCart: action.payload.count,
-                allBuy:state.allBuy+ action.payload.buy,
-                allItem: [...state.allItem,
-                    {
-                        ...action.payload.shoes,
-                        count:findItem()+1
-                    }]
-            }
-        case"PLUS_ITEM":
-            findItem()
-            plusItem(true)
-
-
+            addItem()
             return {
                 ...state,
                 countCart: state.countCart+1,
-                allBuy:state.allBuy+ elem.price,
+                allBuy:state.allBuy+ action.payload.price,
+                allItem: newItem
+            }
+
+        case"PLUS_ITEM":
+            changeItem(true)
+            return {
+                ...state,
+                countCart: state.countCart+1,
+                allBuy:state.allBuy+ action.payload.price,
                 allItem: newItem
             }
         case"MINUS_ITEM":
-
-            findItem()
-            plusItem(false)
+            changeItem(false)
 
 
             return {
                 ...state,
                 countCart: state.countCart-1,
-                allBuy:state.allBuy- elem.price,
+                allBuy:state.allBuy- action.payload.price,
                 allItem: newItem
             }
         case"CLEAR_ITEM":

@@ -214,7 +214,7 @@
     font-style: normal;
     font-weight: 700;
     font-size: 35vw;
-    line-height: 123vh;
+
     z-index:-1;
     color: #FFFFFF;
 }
@@ -232,7 +232,7 @@
     .label_background{
 
         font-size: 20vw;
-        line-height: 75vh;
+
 
     }
 

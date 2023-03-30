@@ -3,19 +3,33 @@ import style from "./Cart.module.css";
 import minus from "../../img/cart/minus.png";
 import plus from "../../img/cart/plus.png";
 
-const CartItem = ({dispatch,name,size,money,count,color}) => {
+const CartItem = ({dispatch,name,size,money,count,color,price}) => {
 
     const plusFN=()=>{
         dispatch({
             type:'PLUS_ITEM',
-            payload: {name:name}
+            payload:{
+                name,
+                money,
+                size,
+                color,
+                price,
+                count:1,
+            }
         })
     }
 
     const minusFN=()=>{
         dispatch({
             type:'MINUS_ITEM',
-            payload:{name:name}
+            payload:{
+                name,
+                money,
+                size,
+                color,
+                price,
+                count:1,
+            }
         })
     }
     return (

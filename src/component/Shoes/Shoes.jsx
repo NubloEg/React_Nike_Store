@@ -5,28 +5,31 @@ import arrow from "../../img/buyshoes/arrow-left.svg";
 
 
 import style from './Shoes.module.css'
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 
 
 const Shoes = ({sizes,colors,name,money,description,img}) => {
-    const cart_red=useSelector(state=>state.cart)
+   
     const dispatch=useDispatch()
     const [size,setSize]=useState(sizes[0])
     const [color,setColor]=useState('red')
+    const [disable,setDisable]=useState(false)
 
     const addItem=()=>{
-        dispatch({
-            type:'ADD_ITEM',
-            payload:{count:cart_red.countCart+1,
-            buy:money,
-            shoes:{
-                name:name,
-                money:money,
-                size:size,
-                color:color,
-                price:money
-            }},
-        })
+       if(!disable){
+           setDisable(true)
+           dispatch({
+               type:'ADD_ITEM',
+               payload:{
+                   name,
+                   money,
+                   size,
+                   color,
+                   price:money,
+                   count:1,
+               },
+           })
+       }
     }
 
     return (<div className={style.buy_shoes}>
@@ -42,7 +45,7 @@ const Shoes = ({sizes,colors,name,money,description,img}) => {
                     <div className={style.buy_shoes__description}>{description}
                     </div>
                     <div className={style.buy_shoes__buy}>
-                        <Link onClick={addItem} className={style.buy_shoes__btn} to="#">ADD TO BAG</Link>
+                        <Link onClick={addItem}  className={disable?style.disable:style.buy_shoes__btn} to="#">ADD TO BAG</Link>
                         <div className={style.buy_shoes__sale}>${money}</div>
                     </div>
                     <div className={style.buy_shoes__sizes}>
