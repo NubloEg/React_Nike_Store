@@ -197,3 +197,21 @@
     }
     
 }
+
+@media (max-width: 1000px) and (orientation: landscape){
+    .store__name{
+        margin-top: 15px;
+        text-align: center;
+        font-weight: 600;
+        font-size: 28px;
+        line-height: 100%;
+    }
+
+    .store__btn{
+        margin-top: 15px;
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 100%;
+       
+    }
+}

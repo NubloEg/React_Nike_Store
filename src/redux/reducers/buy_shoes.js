@@ -4,7 +4,8 @@ const initialState={
     size:[38,39,43,44],
     color:['red','blue'],
     money:120,
-    img:"Boots_1"
+    img:"Boots_1",
+
 }
 
 

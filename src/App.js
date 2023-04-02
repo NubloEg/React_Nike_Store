@@ -3,6 +3,7 @@ import Header from "./component/Header/Header";
 import {Main, Cart, BuyShoes} from "./page/"
 import {Route, Routes} from "react-router";
 import {useSelector} from "react-redux";
+import React from "react";
 
 
 function App() {
@@ -10,12 +11,12 @@ function App() {
     const state=useSelector(state=>state)
 
   return (
+
     <div className="App">
-        <Header cart={state.cart}/>
         <Routes className='content'>
-            <Route path={'/'} element={<Main/>}/>
-            <Route path={'/Cart'} element={<Cart items={state.cart.allItem} allCount={state.cart.countCart} allMoney={state.cart.allBuy}/>}/>
-            <Route path={'/BuyShoes/*'} element={<BuyShoes shoes_red={state.buy_shoes}/>}/>
+            <Route path={'/'}  element={<Main cart={state.cart}/>}/>
+            <Route path={'/Cart'} element={<Cart cart={state.cart}  items={state.cart.allItem} allCount={state.cart.countCart} allMoney={state.cart.allBuy}/>}/>
+            <Route path={'/BuyShoes/*'} element={<BuyShoes cart={state.cart}   shoes_red={state.buy_shoes} />}/>
         </Routes>
     </div>
   );

@@ -10,6 +10,17 @@
     border-bottom: 1px solid #FFFFFF;
 
 }
+
+.no_menu{
+
+    background:#D9D9D9;
+    border-bottom: 1px solid black;
+
+}
+
+.invert{
+    filter:invert(1);
+}
 .header__container{
     width:1500px;
     padding:0px 15px;
@@ -56,6 +67,7 @@
 }
 
 .shop{
+
     transition: all 0.3s ease;
     
 }

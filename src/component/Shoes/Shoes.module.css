@@ -7,7 +7,7 @@
 }
 
 .buy_shoes__container{
-    height: 89.7vh;
+    height: 100vh;
     margin-top: 115px;
     max-width: 1500px;
     width: 100%;
@@ -286,6 +286,10 @@
          padding: 15px 32px;
 
      }
+     .disable{
+        padding: 15px 32px;
+        
+    }
     /* .buy_shoes__sale{
          font-style: normal;
          font-weight: 600;
@@ -389,6 +393,13 @@
         font-size: 12px;
 
     }
+
+    .disable{
+        padding: 10px 15px;
+        font-size: 12px;
+
+    }
+  
      .buy_shoes__sale{
 
          font-size: 25px;
@@ -448,4 +459,11 @@
 
 
 
+}
+
+
+@media (orientation:landscape) and (max-width:1400px){
+    .buy_shoes__container{
+        height: 100%;
+    }
 }

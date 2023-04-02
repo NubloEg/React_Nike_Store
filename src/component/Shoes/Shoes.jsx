@@ -8,16 +8,15 @@ import style from './Shoes.module.css'
 import {useDispatch} from "react-redux";
 
 
-const Shoes = ({sizes,colors,name,money,description,img}) => {
-   
+const Shoes = ({sizes,colors,name,money,description,img,disabled}) => {
+    window.scrollTo(0, 0)
     const dispatch=useDispatch()
     const [size,setSize]=useState(sizes[0])
     const [color,setColor]=useState('red')
-    const [disable,setDisable]=useState(false)
+
 
     const addItem=()=>{
-       if(!disable){
-           setDisable(true)
+       if(!disabled){
            dispatch({
                type:'ADD_ITEM',
                payload:{
@@ -45,7 +44,7 @@ const Shoes = ({sizes,colors,name,money,description,img}) => {
                     <div className={style.buy_shoes__description}>{description}
                     </div>
                     <div className={style.buy_shoes__buy}>
-                        <Link onClick={addItem}  className={disable?style.disable:style.buy_shoes__btn} to="#">ADD TO BAG</Link>
+                        <Link onClick={addItem}  className={disabled?style.disable:style.buy_shoes__btn} to="#">ADD TO BAG</Link>
                         <div className={style.buy_shoes__sale}>${money}</div>
                     </div>
                     <div className={style.buy_shoes__sizes}>

@@ -5,10 +5,12 @@ import noItem from "../img/cart/noitem.png"
 import {Link} from "react-router-dom";
 import CartItem from "../component/Cart/CartItem";
 import {useDispatch} from "react-redux";
+import Header from "../component/Header/Header";
 
 
-const Cart =({items,allCount,allMoney})=>{
+const Cart =({items,allCount,allMoney,cart})=>{
     const dispatch=useDispatch()
+
 
     const removeItems=()=>{
 
@@ -22,42 +24,45 @@ const Cart =({items,allCount,allMoney})=>{
     }
 
     return(
-        <div className={style.cart}>
-            <div className={style.cart__container}>
-                <Link to={'/'} className={style.cart__back}>
-                    <img src={arrow} alt=""/>
-                    Home
-                </Link>
+        <> <Header cart={cart} main={false} />
+            <div className={style.cart}>
+                <div className={style.cart__container}>
+                    <Link to={'/'} className={style.cart__back}>
+                        <img src={arrow} alt=""/>
+                        Home
+                    </Link>
 
-                
-                <div className={style.cart__content}>
-                {items.length===0?<div className={style.noitem__container}>
-                        < img className={style.noitem} src={noItem} alt=""/>
-                        <div className={style.text__noitem}>Добавьте товар в корзину</div>
-                    </div>: <>
-                     <div className={style.cart__items}>
 
-                            { items.map((el,i)=><CartItem dispatch={dispatch} key={i} price={el.price} name={el.name} size={el.size} money={el.money} count={el.count} color={el.color} />)
+                    <div className={style.cart__content}>
+                        {items.length===0?<div className={style.noitem__container}>
+                            < img className={style.noitem} src={noItem} alt=""/>
+                            <div className={style.text__noitem}>Добавьте товар в корзину</div>
+                        </div>: <>
+                            <div className={style.cart__items}>
 
-                            }
-                        </div>
-                        <div className={style.cart__all__info}>
-                        <div className={style.cart__all__count}>
-                        Всего пар: {allCount} шт
-                        </div>
-                        <div className={style.cart__all__money}>
-                        Сумма заказа: ${allMoney}
-                        </div>
-                        </div>
+                                { items.map((el,i)=><CartItem dispatch={dispatch} key={i} price={el.price} name={el.name} size={el.size} money={el.money} count={el.count} color={el.color} />)
 
-                    <div className={style.btn__pay}>
-                        <div onClick={removeItems} className={style.btn__pay__txt}>Оплатить сейчас</div>
-                    </div></>}
-                   
+                                }
+                            </div>
+                            <div className={style.cart__all__info}>
+                                <div className={style.cart__all__count}>
+                                    Всего пар: {allCount} шт
+                                </div>
+                                <div className={style.cart__all__money}>
+                                    Сумма заказа: ${allMoney}
+                                </div>
+                            </div>
+
+                            <div className={style.btn__pay}>
+                                <div onClick={removeItems} className={style.btn__pay__txt}>Оплатить сейчас</div>
+                            </div></>}
+
+                    </div>
+                    <div className={style.label_background}>Nike</div>
                 </div>
-                <div className={style.label_background}>Nike</div>
             </div>
-        </div>
+        </>
+
 
     )
 }
