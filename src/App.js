@@ -1,5 +1,4 @@
 import './App.css';
-import Header from "./component/Header/Header";
 import {Main, Cart, BuyShoes} from "./page/"
 import {Route, Routes} from "react-router";
 import {useSelector} from "react-redux";
