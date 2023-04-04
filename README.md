@@ -12,4 +12,4 @@
     <li>Очистка корзины(псевдо оплата)</li>
 </ul>
 
-<h2>Результат можно посмотреть по <a href="https://vercel.com/nubloeg/react-nike-store" target="_blank">ссылке</a></h2>
+<h2>Результат можно посмотреть по <a href="https://react-nike-store-ten.vercel.app/" target="_blank">ссылке</a></h2>
