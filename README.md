@@ -1,15 +1,15 @@
 # React_Nike_Store
 <div id="cover" align="center">
-  <img src="https://github.com/NubloEg/Weather-Vanila-JS/blob/main/public/GIT.png" />
+  <img src="https://github.com/NubloEg/React_Nike_Store/blob/main/public/GIT.png" />
 </div>
 
-<h1>Погодное приложение реализованное через открытое API </h1>
+<h1>Магазин кросовк NIKE React+Redux</h1>
 <h2>Функцуионал приложения:</h2>
 <ul>
-    <li>Определения погоды по введенному городу на несколько дней</li>
-    <li>Валидация правильно введенного города</li>
-    <li>Обработан момент загрузки</li>
-    <li>Дополнительное открытое API для загрузки картинки по тематике введенного города</li>
+    <li>Сортировка кроссовок по полу</li>
+    <li>Добавления кроссовок в корзину</li>
+    <li>Увеличение количества кроссовк и удаление их из корзины</li>
+    <li>Очистка корзины(псевдо оплата)</li>
 </ul>
 
-<h2>Результат можно посмотреть по <a href="https://weather-vanila-js.vercel.app/" target="_blank">ссылке</a></h2>
+<h2>Результат можно посмотреть по <a href="https://vercel.com/nubloeg/react-nike-store" target="_blank">ссылке</a></h2>
